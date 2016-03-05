@@ -1,0 +1,82 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class rockPaperGame 
+{
+	public static void main(String [] args)
+	{
+		Random random = new Random();
+		Scanner scanner = new Scanner(System.in);
+		
+		int you, cpu;
+		System.out.println("Draw move ( 0=Rock;1=Paper;2=Scissors):");
+		you = scanner.nextInt();
+		
+		if(you < 0 || you > 2)
+		{
+			System.out.println("Invalid number. game crash.");
+		
+			System.exit(0);
+		}
+		cpu = random.nextInt(3);
+		
+		if(you == cpu)
+		{
+			if(you == 0)
+			{
+				System.out.println("Both players chose Rock. Tie game");
+			}
+			else if(you == 1)
+			{
+				System.out.println("Both players chose Paper. Tie game");
+			}	
+			else
+			{
+				System.out.println("Both players chose Scissors");
+			}	
+			System.exit(0);
+		}
+		if(you == 0)
+		{
+			if(cpu == 1)
+			{
+				System.out.println("You chose Rock.Computer chose Paper");
+				System.out.println("Computer wins");
+			}	
+			else 
+			{
+				System.out.println("You chose Rock.Computer chose Scissors");
+				System.out.println("You win");
+			}
+		}
+		else if(you == 1)
+		{
+			if(cpu == 0)
+			{
+				System.out.println("You chose Paper.Computer chose Rock");
+				System.out.println("Computer wins");
+			}	
+			else
+			{
+				System.out.println("You chose Paper.Computer chose Scissors");
+				System.out.println("Computer Wins");
+			}	
+		}
+		else
+		{
+			if(cpu == 0)
+			{
+				System.out.println("You chose Scissors.Computer chose Rock");
+				System.out.println("Computer wins");
+			}	
+			else
+			{
+				System.out.println("You chose Scissors.Computer chose Paper");
+				System.out.println("You win");
+			}	
+				
+		}
+		scanner.close();
+			
+	}
+}
